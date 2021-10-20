@@ -1,9 +1,10 @@
 <div class="main-container">
   <h1>Google for Beer</h1>
   <div class="search-container">
-    <%= simple_form_for @beer_search do |f| %>
-      <%= f.input :beer_query %>
-      <%= f.button :submit %>
+    <%= simple_form_for :search, url: root_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+      <%= f.input :beer_query, input_html: {value: ""}, label: "Beer Me", placeholder: "pick a beer" %>
+      <%= f.submit "Search", class: "btn btn-primary" %>
     <% end %>
   </div>
+  <%= @result %>
 </div>
