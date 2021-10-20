@@ -1,13 +1,17 @@
 <div class="main-container">
-  <h1>Google for Beer</h1>
+  <h1 class="title">Find a Beer</h1>
   <div class="search-container">
-    <%= simple_form_for :search, url: root_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-      <%= f.input :beer_query, input_html: {value: ""}, label: "Beer Me", placeholder: "pick a beer" %>
-      <%= f.submit "Search", class: "btn btn-primary" %>
+    <%= simple_form_for :search, url: root_path, method: "GET" do |f| %>
+      <%= f.input :beer_query, input_html: {value: ""}, label: false, placeholder: "pick a beer..." %>
+      <%= f.submit "Search", class: "btn btn-primary btn-blue" %>
     <% end %>
   </div>
-  <% @results.each do |result| %>
-    <%= result["name"] %>
-    <%= result["description"] %>
-  <% end %>
+  <div class="card-container">
+    <% @results.each do |result| %>
+      <div class="card">
+        <div class="card-name"><%= result["name"] %></div>
+        <div class="card-description"><%= result["description"] %></div>
+      </div>
+    <% end %>
+  </div>
 </div>

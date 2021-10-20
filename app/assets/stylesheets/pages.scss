@@ -1,3 +1,26 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.main-container {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.title {
+  margin-top: 100px;
+}
+
+.card {
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.card-name {
+  font-weight: bold;
+  font-size: medium;
+}
+
+.search_beer_query {
+  width: 200px;
+}
